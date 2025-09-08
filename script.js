@@ -458,16 +458,16 @@ function nextImage() {
   
     map.setView([52.205, 0.119], 15);
   
-    // 🔁 Reshuffle if at end of image list
+    // Reshuffle if at end of image list
     if (currentImageIndex >= shuffledImages.length) {
       shuffleImages();
     }
   
-    // ✅ Show current image
+    // Show current image
     current = shuffledImages[currentImageIndex];
     document.getElementById('photo').src = `images/${current.filename}`;
   
-    // 🕒 Preload the next image
+    // Preload the next image for faster loading times
     preloadNextImage(currentImageIndex + 1);
   
     // Advance the index AFTER using current
