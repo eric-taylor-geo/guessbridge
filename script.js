@@ -388,7 +388,7 @@ function handleGuess(latlng, timedOut = false) {
         color: 'black',
         weight: 2,
         opacity: 0.7,
-        dashArray: '5,5'  // Optional: dashed line
+        dashArray: '5,5'
         }).addTo(map);
     }
   
@@ -396,9 +396,9 @@ function handleGuess(latlng, timedOut = false) {
   
   // Draw the 15m accuracy circle
     accuracyCircle = L.circle(actual, {
-    radius: 50,                 // in meters
-    color: '#007bff',           // stroke (blue)
-    fillColor: '#007bff',       // fill (blue)
+    radius: 50,
+    color: '#007bff',
+    fillColor: '#007bff',
     fillOpacity: 0.2
     }).addTo(map);
 
@@ -416,8 +416,8 @@ function handleGuess(latlng, timedOut = false) {
 
   document.getElementById('feedback').innerHTML =
     timedOut
-      ? `⏰ Time's up!<br>✅ ${correctGuesses} / ${totalGuesses} correct guesses (≤ 50m)<br>📏 Average distance: ${avgDist} meters`
-      : `📍 You were ${dist.toFixed(1)} meters away!<br>✅ ${correctGuesses} / ${totalGuesses} correct guesses (≤ 50 m)<br>📏 Average distance: ${avgDist} meters`;
+      ? `Time's up!<br>${correctGuesses} / ${totalGuesses} correct guesses (≤ 50m)<br>Average distance: ${avgDist} meters`
+      : `You were ${dist.toFixed(1)} meters away!<br>${correctGuesses} / ${totalGuesses} correct guesses (≤ 50 m)<br>Average distance: ${avgDist} meters`;
 
   document.getElementById("timer").innerText = "";
   isGuessingAllowed = false;
@@ -426,11 +426,11 @@ function handleGuess(latlng, timedOut = false) {
 
 function startTimer() {
   timeLeft = 60;
-  document.getElementById("timer").innerText = `⏰ Time left: ${timeLeft}s`;
+  document.getElementById("timer").innerText = `Time left: ${timeLeft}s`;
 
   timer = setInterval(() => {
     timeLeft--;
-    document.getElementById("timer").innerText = `⏰ Time left: ${timeLeft}s`;
+    document.getElementById("timer").innerText = `Time left: ${timeLeft}s`;
 
     if (timeLeft <= 0) {
       clearInterval(timer);
