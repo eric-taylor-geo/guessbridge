@@ -8,39 +8,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
-
 </head>
 <body>
-  <h1>GuessBridge Unlimited</h1>
+  <!-- Splash -->
+  <div id="splash" class="splash">
+    <div class="splash-inner">
+      <h1>GuessBridge Unlimited</h1>
+      <p class="tagline">Fuel your procrastination</p>
+      <button id="playBtn">Play</button>
+    </div>
+    <footer>
+        <p>
+          © 2025 Eric Taylor <span class="dot">•</span>
+          <a href="https://github.com/eric-taylor-geo/guessbridge" target="_blank">
+            <img src="images/github-mark.svg" alt="GitHub" class="github-icon">
+          </a>
+        </p>
+      </footer>
+  </div>
 
-  <div id="game-container">
-    <div id="map"></div>
-    <div id="image-box">
-        <img id="photo" src="" alt="Guess the location" />   
+  <!-- Main app -->
+  <main id="game" class="hidden">
+    <h1>GuessBridge Unlimited</h1>
+
+    <div id="game-container">
+      <div id="map"></div>
+      <div id="image-box">
+        <img id="photo" src="" alt="Guess the location" />
         <div class="button-group">
           <button id="submitBtn">Submit Guess</button>
           <button onclick="nextImage()">Next Location</button>
         </div>
       </div>
-  </div>
+    </div>
 
+    <p id="timer"></p>
+    <p id="feedback"></p>
+  </main>
 
-  <p id="timer"></p>
-
-
-  <p id="feedback"></p>
 
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
-
-  <footer>
-    <p>
-      © 2025 Eric Taylor •
-      <a href="https://github.com/eric-taylor-geo/guessbridge" target="_blank">
-      <img src="images/github-mark.svg" alt="GitHub" class="github-icon">
-      </a>
-    </p>
-  </footer>
 </body>
 </html>
